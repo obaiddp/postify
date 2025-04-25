@@ -1,0 +1,53 @@
+Project summary:
+
+(1) What we have
+-> users
+-> posts
+
+(2) What will they do
+
+-> Users will write post
+
+(3) Main functionalities
+
+// userSchema
+userSchema = mongoose.schema({
+    username: String,
+    name: String,
+    email: String,
+    password: String,
+    post: [{
+        type: mongoose.objectId,
+        ref: "Post"
+    }]
+})
+
+// postSchema
+postSchema = mongoose.schema({
+    content: String,
+    user: {
+        type: mongoose.objectId,
+        ref: "User"
+    },
+    likes: [{
+        type: mongoose.objectId,
+        ref: "User"
+    }],
+    Date: {
+        type: Date,
+        default: Date.now
+    }
+})
+
+
+(4) Workflow
+->
+- user will register
+- login/logout
+- write post
+- delete post
+ (each post is associated to specific user)
+
+->
+- other users can like the post
+- liked post ( will have have id's of users that liked the post)
