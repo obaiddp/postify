@@ -6,6 +6,11 @@
 - User can create post 
 - Users can like post
 
+### Tools use: 
+- Mongoose
+- Express, node
+- Ejs
+
 (1) Create Account
 ![alt_image](https://github.com/obaiddp/postify/blob/main/crud_register.png)
 
